@@ -1,0 +1,55 @@
+@use "../../../../sass/_index" as *
+
+.player-selection__options
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    padding: 9px 0.5rem
+    background-color: $bg-navy
+    width: 100%
+    border-radius: 10px
+    label
+        width: 100%
+        height: 54px
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        position: relative
+        cursor: pointer
+        background-color: trasparent
+        border-radius: 10px
+        transition: 0.4s ease
+        &:hover
+            background-color: hsla(198, 23%, 72%, 5%)
+    img
+        filter: brightness(0) saturate(100%) invert(85%) sepia(5%) saturate(874%) hue-rotate(152deg) brightness(86%) contrast(96%)
+        width: 2rem
+        height: 2rem
+        z-index: 1
+        transition: 0.4s ease-in-out
+label > input[type="radio"]
+        z-index: 1
+        all: unset
+
+.o-player__label::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $secondary
+    border-radius: 10px
+    z-index: 0
+    transform: translate(-100%)
+    transition: 0.2s
+
+.o-player__label:has(input[type="radio"]:checked)
+    &::before
+        transform: translate(0)
+
+.x-player__label:has(input[type="radio"]:checked), .o-player__label:has(input[type="radio"]:checked)
+    > img
+        filter: brightness(0) saturate(100%) invert(10%) sepia(14%) saturate(1856%) hue-rotate(157deg) brightness(96%) contrast(87%)

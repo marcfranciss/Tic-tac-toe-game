@@ -1,0 +1,40 @@
+@use "../../sass/_index" as *
+
+.newgame-container
+    width: 460px
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2.5rem
+    @include media($mobile)
+        width: 327px
+
+.player-selection
+    width: 100%
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    background-color: $primary-light
+    padding: 1.5rem 2rem
+    border-radius: 15px
+    @include shadow($bg-navy-bs)
+    > .player-selection__header
+        font-size: $heading-xs
+        font-weight: 700
+        color: $text-silver
+        letter-spacing: 1px
+        line-height: 20px
+        margin-bottom: 1.5rem
+    > .player-selection__reminder
+        font-size: $body
+        font-weight: 500
+        color: $text-silver
+        letter-spacing: 0.88px
+        line-height: 18px
+        margin-top: 1rem
+
+.newgame-selector
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 20px

@@ -1,0 +1,14 @@
+@use "./sass/_index" as *
+#root
+  max-width: 1440px
+
+body
+  background-color: $bg-navy
+
+main
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-top: 215px
+  @include media($mobile)
+    margin-top: 119px
