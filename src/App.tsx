@@ -4,7 +4,7 @@ import NewGameMenu from "./components/NewGameMenu/NewGameMenu";
 const App = () => {
   return (
     <main>
-      {/* <NewGameMenu /> */}
+      <NewGameMenu />
       <GameSolo />
     </main>
   );
