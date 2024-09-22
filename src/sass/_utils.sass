@@ -10,6 +10,16 @@ $mobile: 30rem
     @media (max-width: $size)
         @content
 
+@mixin btn-clr-scheme($color, $var, $hover, $shadow)
+    .btn-#{$color}
+        background-color: $var
+        box-shadow: inset 0 -8px 0 0 $shadow
+        &:hover
+            background-color: $hover
+        &:active
+            background-color: $hover
+            box-shadow: inset 0 -2px 0 0 $shadow
+
 .slideRight
     > img
         animation: slideRight 0.7s ease infinite

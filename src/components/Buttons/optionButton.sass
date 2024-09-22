@@ -5,13 +5,14 @@ button
 
 .btn-control
     max-width: 460px
+    width: max-content
     max-height: max-content
     cursor: pointer
     padding-top: calc( 1em - 3px )
     padding-bottom: calc( 1em + 5px )
     padding-inline: 1em
     border-radius: 15px
-    text-align: center
+    // text-align: center
     font-size: $heading-s
     font-weight: bold
     line-height: 25px
@@ -27,16 +28,6 @@ button
         font-size: $heading-xs
         line-height: 20px
         letter-spacing: 1px
-
-@mixin btn-clr-scheme($color, $var, $hover, $shadow)
-    .btn-#{$color}
-        background-color: $var
-        box-shadow: inset 0 -8px 0 0 $shadow
-        &:hover
-            background-color: $hover
-        &:active
-            background-color: $hover
-            box-shadow: inset 0 -2px 0 0 $shadow
 
 @include btn-clr-scheme("blue", $bg-blue, $bg-blue-hvr, $bg-blue-bs)
 @include btn-clr-scheme("yellow", $bg-yellow, $bg-yellow-hvr, $bg-yellow-bs)

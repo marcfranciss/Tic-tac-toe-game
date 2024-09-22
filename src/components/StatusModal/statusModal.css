@@ -138,61 +138,76 @@ select {
   font-style: normal;
 }
 
-.gameMode-solo__container {
-  width: 460px;
-  display: flex;
-  flex-direction: column;
-  gap: 19px;
-}
-@media (max-width: 30rem) {
-  .gameMode-solo__container {
-    gap: 2rem;
-    width: 328px;
-  }
+dialog {
+  position: fixed;
+  border: none;
+  outline: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  z-index: 999;
 }
 
-.cells_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px;
-}
-.cells_container > .cell {
-  background-color: hsl(200, 35%, 19%);
+.status-selectors {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 140px;
+  width: 100%;
+  max-height: 266px;
+  min-height: 228px;
+  background-color: hsl(200, 35%, 19%);
+}
+.status-selectors > h2.status-selector__header {
+  color: hsl(199, 24%, 73%);
+  font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+.status-selectors > .status-selector__message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.status-selectors > .status-selector__message > img.message__img {
+  width: 2rem;
   aspect-ratio: 1;
-  border-radius: 15px;
-  transition: 0.4s ease-in-out;
-  cursor: pointer;
-  box-shadow: inset 0 -8px 0 0 hsl(201, 45%, 11%);
 }
-.cells_container > .cell img {
-  width: 64px;
-  aspect-ratio: 1;
+.status-selectors > .status-selector__message > .message__text.o-winner {
+  color: hsl(39, 88%, 58%);
 }
-
-.cells_container[data-curr-user=x] > .cell:hover, .cells_container[data-curr-user=x] .cell:focus {
-  background: center no-repeat url(/src/assets/images/icon-x-outline.svg);
-  background-size: 64px 64px;
+.status-selectors > .status-selector__message > .message__text.x-winner {
+  color: hsl(178, 60%, 48%);
 }
-
-.cells_container[data-curr-user=o] > .cell:hover, .cells_container[data-curr-user=o] .cell:focus {
-  background: center no-repeat url(/src/assets/images/icon-o-outline.svg);
-  background-size: 64px 64px;
+.status-selectors > .status-selector__message > .message__text.restart {
+  color: hsl(199, 24%, 73%);
+}
+.status-selectors > .status-selector__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 @media (max-width: 30rem) {
-  .cells_container .cell {
-    width: 96px;
+  .modal-contailer > .status-selector_message {
+    gap: 0.5rem;
   }
-  .cells_container .cell > img {
-    width: 40px;
+  .modal-contailer > .status-selector_message > img.message__img {
+    width: 30px;
   }
-  .cells_container[data-curr-user] > .cell:hover, .cells_container[data-curr-user] .cell:focus {
-    background-size: 40px 40px;
+  .modal-contailer > .status-selector__buttons {
+    width: 306px;
   }
-}/*# sourceMappingURL=gameSolo.css.map */
+}/*# sourceMappingURL=statusModal.css.map */

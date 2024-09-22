@@ -1,6 +1,6 @@
 import OptionButton from "../Buttons/OptionButton";
+import { PageLogo } from "../Utils/PageLogo";
 import "./newGameMenu.sass";
-import pageLogo from "@images/logo.svg";
 import SelectionOptions from "./PlayerSelection.tsx/SelectionOptions/SelectionOptions";
 
 const NewGameMenu = () => {
@@ -8,9 +8,7 @@ const NewGameMenu = () => {
     <section id='newGameMenu'>
       <div className='newgame-container'>
         <header>
-          <a href='/'>
-            <img src={pageLogo} alt='Page Logo - X and O' />
-          </a>
+          <PageLogo />
         </header>
         <div className='player-selection'>
           <span className='player-selection__header'>PICK PLAYER 1’S MARK</span>

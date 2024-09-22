@@ -1,0 +1,42 @@
+@use "../../sass/_index" as *
+
+// PlayerIndecator.tsx
+.player-indicator
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    gap: 0.5rem
+    > img.player-indicator__img
+        filter: brightness(0) saturate(100%) invert(85%) sepia(5%) saturate(874%) hue-rotate(152deg) brightness(86%) contrast(96%)
+        width: 20px
+        aspect-ratio: 1
+    > p.player-indicator__para
+        font-weight: 700
+        font-size: $heading-xs
+        letter-spacing: 1px
+        line-height: 20px
+        color: $text-silver
+
+@include media($mobile)
+    .player-indicator
+        img.player-indicator__img
+            width: 1rem
+        p.player-indicator__para
+            font-size: $body
+            letter-spacing: 0.88px
+            line-height: 18px
+
+// Game Restart Button
+.restart-button
+    width: 2.5rem
+    aspect-ratio: 1
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border-radius: 5px
+
+    img.restart-button__img
+        width: 1rem
+        aspect-ratio: 1

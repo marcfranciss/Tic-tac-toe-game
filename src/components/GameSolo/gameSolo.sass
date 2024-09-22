@@ -2,7 +2,11 @@
 
 .gameMode-solo__container
     width: 460px
+    display: flex
+    flex-direction: column
+    gap: 19px
     @include media($mobile)
+        gap: 2rem
         width: 328px
 
 .cells_container
@@ -27,12 +31,12 @@
             aspect-ratio: 1
 
 .cells_container[data-curr-user="x"]
-    > .cell:hover
+    > .cell:hover, .cell:focus
         background: center no-repeat url(/src/assets/images/icon-x-outline.svg)
         background-size: 64px 64px
 
 .cells_container[data-curr-user="o"]
-    > .cell:hover
+    > .cell:hover, .cell:focus
         background: center no-repeat url(/src/assets/images/icon-o-outline.svg)
         background-size: 64px 64px
 
@@ -43,5 +47,5 @@
             > img
                 width: 40px
     .cells_container[data-curr-user]
-        > .cell:hover
+        > .cell:hover, .cell:focus
             background-size: 40px 40px

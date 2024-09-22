@@ -1,0 +1,69 @@
+@use "../../sass/_index" as *
+
+dialog
+    position: fixed
+    border: none
+    outline: none
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    max-height: 100vh
+    background-color: hsla(0, 0%, 0%, 50%)
+    z-index: 999
+    // display: flex
+    // flex-direction: column
+    // justify-content: center
+    // align-items: center
+    // visibility: hidden
+.status-selectors
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    max-height: 266px
+    min-height: 228px
+    background-color: $bg-navy-hvr
+    > h2.status-selector__header
+        color: $text-silver
+        font-size: clamp($body, 0.831rem + 0.1878vw, $heading-xs)
+        font-weight: 700
+        letter-spacing: 1px
+        line-height: 20px
+        margin-bottom: 1rem
+    > .status-selector__message
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        gap: 1.5rem
+        margin-bottom: 1.5rem
+        > img.message__img
+            width: 2rem
+            aspect-ratio: 1
+        > .message__text.o-winner
+            color: $text-yellow
+        > .message__text.x-winner
+            color: $text-blue
+        > .message__text.restart
+            color: $text-silver
+    > .status-selector__buttons
+        // width: 238px
+        // height: 52px
+        display: flex
+        flex-direction: row
+        gap: 1rem
+
+@include media($mobile)
+    .modal-contailer
+        > .status-selector_message
+            gap: 0.5rem
+            > img.message__img
+                width: 30px
+        > .status-selector__buttons
+            width: 306px

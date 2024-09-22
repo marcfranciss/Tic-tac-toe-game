@@ -1,0 +1,46 @@
+@use "../../../sass/_index" as *
+
+.score-card.blue
+    background-color: $bg-blue-hvr
+.score-card.silver
+    background-color: $bg-silver
+.score-card.yellow
+    background-color: $bg-yellow-hvr
+
+.score-card
+    width: 8.75rem
+    height: 4.5rem
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.score-card__header
+    font-weight: 500
+    font-size: $body
+    letter-spacing: 0.88px
+    line-height: 18px
+    color: $text-navy
+
+.score-card__score
+    font-weight: 700
+    font-size: $heading-m
+    letter-spacing: 1.5px
+    line-height: 30px
+    color: $text-navy
+
+@include media($mobile)
+    .score-card
+        width: 6rem
+        height: 4rem
+
+    .score-card__header
+        font-size: $body-s
+        letter-spacing: 0.75px
+        line-height: 15px
+
+    .score-card__score
+        font-size: $heading-s
+        letter-spacing: 1.25px
+        line-height: 25px

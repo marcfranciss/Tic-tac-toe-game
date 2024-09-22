@@ -144,6 +144,8 @@ button {
 
 .btn-control {
   max-width: 460px;
+  width: -moz-max-content;
+  width: max-content;
   max-height: -moz-max-content;
   max-height: max-content;
   cursor: pointer;
@@ -151,7 +153,6 @@ button {
   padding-bottom: calc(1em + 5px);
   padding-inline: 1em;
   border-radius: 15px;
-  text-align: center;
   font-size: 1.25rem;
   font-weight: bold;
   line-height: 25px;
