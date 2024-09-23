@@ -1,4 +1,4 @@
-import pageLogo from "@images/logo.svg";
+import pageLogo from "@/assets/images/logo.svg";
 
 export const PageLogo = () => {
   return (

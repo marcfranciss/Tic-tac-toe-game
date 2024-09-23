@@ -170,17 +170,29 @@ select {
   cursor: pointer;
   box-shadow: inset 0 -8px 0 0 hsl(201, 45%, 11%);
 }
+.cells_container > .cell[data-player=X]:disabled {
+  background-color: hsl(178, 60%, 48%);
+}
+.cells_container > .cell[data-player=X]:disabled > img {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(10%) saturate(1915%) hue-rotate(158deg) brightness(94%) contrast(92%);
+}
+.cells_container > .cell[data-player=O]:disabled {
+  background-color: hsl(39, 88%, 58%);
+}
+.cells_container > .cell[data-player=O]:disabled > img {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(10%) saturate(1915%) hue-rotate(158deg) brightness(94%) contrast(92%);
+}
 .cells_container > .cell img {
   width: 64px;
   aspect-ratio: 1;
 }
 
-.cells_container[data-curr-user=x] > .cell:hover, .cells_container[data-curr-user=x] .cell:focus {
+.cells_container[data-curr-user=X] > .cell:not(:disabled):hover, .cells_container[data-curr-user=X] .cell:focus {
   background: center no-repeat url(/src/assets/images/icon-x-outline.svg);
   background-size: 64px 64px;
 }
 
-.cells_container[data-curr-user=o] > .cell:hover, .cells_container[data-curr-user=o] .cell:focus {
+.cells_container[data-curr-user=O] > .cell:not(:disabled):hover, .cells_container[data-curr-user=O] .cell:focus {
   background: center no-repeat url(/src/assets/images/icon-o-outline.svg);
   background-size: 64px 64px;
 }

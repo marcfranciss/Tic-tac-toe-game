@@ -185,10 +185,10 @@ dialog {
   width: 2rem;
   aspect-ratio: 1;
 }
-.status-selectors > .status-selector__message > .message__text.o-winner {
+.status-selectors > .status-selector__message > .message__text.O-winner {
   color: hsl(39, 88%, 58%);
 }
-.status-selectors > .status-selector__message > .message__text.x-winner {
+.status-selectors > .status-selector__message > .message__text.X-winner {
   color: hsl(178, 60%, 48%);
 }
 .status-selectors > .status-selector__message > .message__text.restart {

@@ -1,5 +1,5 @@
-import imgO from "@images/icon-o.svg";
-import imgX from "@images/icon-x.svg";
+import imgO from "@/assets/images/icon-o.svg";
+import imgX from "@/assets/images/icon-x.svg";
 import "./UtilsStyle.sass";
 
 interface PlayerIndicatorProps {
@@ -11,7 +11,7 @@ export const PlayerIndicator = ({ currPlayer }: PlayerIndicatorProps) => {
     <div className='player-indicator'>
       <img
         className='player-indicator__img'
-        src={currPlayer === "o" ? imgO : imgX}
+        src={currPlayer === "X" ? imgX : imgO}
         alt='Current player'
       />
       <p className='player-indicator__para'>TURN</p>

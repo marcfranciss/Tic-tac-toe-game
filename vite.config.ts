@@ -8,9 +8,7 @@ export default defineConfig({
   base: "https://marcfranciss.github.io/Tic-tac-toe",
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@images": path.resolve(__dirname, "./src/assets/images"),
-      "@components": path.resolve(__dirname, "./src/components"),
+      "@": path.resolve(__dirname, "src"),
     }
   }
 })

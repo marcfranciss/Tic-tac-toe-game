@@ -24,7 +24,7 @@
         &:hover
             background-color: hsla(198, 23%, 72%, 5%)
     img
-        filter: brightness(0) saturate(100%) invert(85%) sepia(5%) saturate(874%) hue-rotate(152deg) brightness(86%) contrast(96%)
+        filter: $img-silver
         width: 2rem
         height: 2rem
         z-index: 1
@@ -52,4 +52,4 @@ label > input[type="radio"]
 
 .x-player__label:has(input[type="radio"]:checked), .o-player__label:has(input[type="radio"]:checked)
     > img
-        filter: brightness(0) saturate(100%) invert(10%) sepia(14%) saturate(1856%) hue-rotate(157deg) brightness(96%) contrast(87%)
+        filter: $img-dark-navy
