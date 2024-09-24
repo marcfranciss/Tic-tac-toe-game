@@ -16,8 +16,12 @@ interface AppContextProps {
   setGameWinner: (value: Player) => void;
   openModal: boolean;
   setOpenModal: (value: boolean) => void;
+  openRestartModal: boolean;
+  setOpenRestartModal: (value: boolean) => void;
   gameBoard: number[];
   setGameBoard: (value: number[]) => void;
+  isGameDraw: boolean;
+  setIsGameDraw: (value: boolean) => void;
 }
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
@@ -32,9 +36,11 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [currentPlayer, setCurrentPlayer] = useState<Player>("X");
   const [gameWinner, setGameWinner] = useState<Player>("");
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [openRestartModal, setOpenRestartModal] = useState<boolean>(false);
   const [gameBoard, setGameBoard] = useState<number[]>([
     1, 2, 3, 4, 5, 6, 7, 8, 9,
   ]);
+  const [isGameDraw, setIsGameDraw] = useState<boolean>(false);
   return (
     <AppContext.Provider
       value={{
@@ -50,8 +56,12 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         setGameWinner,
         openModal,
         setOpenModal,
+        openRestartModal,
+        setOpenRestartModal,
         gameBoard,
         setGameBoard,
+        isGameDraw,
+        setIsGameDraw,
       }}>
       {children}
     </AppContext.Provider>

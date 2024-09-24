@@ -1,16 +1,9 @@
-import { useAppContext } from "../../context/AppContext";
-import { GameRestartButton } from "../Utils/GameRestartButton";
-import { PageLogo } from "../Utils/PageLogo";
-import { PlayerIndicator } from "../Utils/PlayerIndicator";
+import { ReactNode } from "react";
 import "./gameHeader.sass";
 
-export const GameHeader = () => {
-  const { currentPlayer } = useAppContext();
-  return (
-    <div className='game-header__container'>
-      <PageLogo />
-      <PlayerIndicator currPlayer={currentPlayer} />
-      <GameRestartButton />
-    </div>
-  );
+interface GameHeaderProps {
+  children: ReactNode;
+}
+export const GameHeader = ({ children }: GameHeaderProps) => {
+  return <div className='game-header__container'>{children}</div>;
 };

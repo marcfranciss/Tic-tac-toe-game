@@ -24,3 +24,7 @@ export function checkGameWinner(boardCell: Player[], player: string) {
       combination.every((index) => boardCell[index] === player)
     );
   }
+
+  export const checkGameDraw = (boardCell: Player[]) => {
+    return boardCell.flat().every((cell)=> cell !== "")
+  }

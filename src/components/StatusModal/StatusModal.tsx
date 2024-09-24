@@ -6,7 +6,7 @@ import { useAppContext } from "../../context/AppContext";
 
 interface StatusModalProps {
   statusMsg: string;
-  onNextRound: () => void;
+  onNextRound: (value: boolean) => void;
 }
 export const StatusModal = ({ statusMsg, onNextRound }: StatusModalProps) => {
   const {
@@ -15,6 +15,8 @@ export const StatusModal = ({ statusMsg, onNextRound }: StatusModalProps) => {
     setIsPlayerSelection,
     setOpenModal,
     setGameWinner,
+    isGameDraw,
+    setIsGameDraw,
   } = useAppContext();
 
   const handleQuitButton = () => {
@@ -25,7 +27,8 @@ export const StatusModal = ({ statusMsg, onNextRound }: StatusModalProps) => {
   const handleNextRoundButton = () => {
     setGameWinner("");
     setOpenModal(false);
-    onNextRound();
+    setIsGameDraw(false);
+    onNextRound(true);
   };
   return (
     <dialog
@@ -35,16 +38,23 @@ export const StatusModal = ({ statusMsg, onNextRound }: StatusModalProps) => {
       aria-live='assertive'
       aria-label='Game status'>
       <div className='status-selectors'>
-        <h2 className='status-selector__header'>{statusMsg}</h2>
-        <div className='status-selector__message'>
-          <img
-            className='message__img'
-            src={gameWinner === "X" ? imgX : imgO}
-            alt=''></img>
-          <p className={`message__text ${gameWinner}-winner`}>
-            TAKES THE ROUND
-          </p>
-        </div>
+        {isGameDraw ? (
+          <p className='draw__text'>ROUND TIED</p>
+        ) : (
+          <div className='winner__text'>
+            <h2 className='status-selector__header'>{statusMsg}</h2>
+            <div className='status-selector__message'>
+              <img
+                className='message__img'
+                src={gameWinner === "X" ? imgX : imgO}
+                alt=''
+              />
+              <p className={`message__text ${gameWinner}-winner`}>
+                TAKES THE ROUND
+              </p>
+            </div>
+          </div>
+        )}
         <div className='status-selector__buttons'>
           <OptionButton
             colorScheme={"silver"}
