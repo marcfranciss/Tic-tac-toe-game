@@ -1,5 +1,6 @@
 import { useAppContext } from "../../context/AppContext";
 import OptionButton from "../Buttons/OptionButton";
+import { cpuMove } from "../hooks/useCPULogic";
 import { PageLogo } from "../Utils/PageLogo";
 import "./newGameMenu.sass";
 import SelectionOptions from "./PlayerSelection.tsx/SelectionOptions/SelectionOptions";
@@ -7,10 +8,14 @@ import SelectionOptions from "./PlayerSelection.tsx/SelectionOptions/SelectionOp
 type GameModes = "solo" | "multiplayer" | undefined;
 
 const NewGameMenu = () => {
-  const { setIsPlayerSelection, setGameMode } = useAppContext();
-
+  const { setIsPlayerSelection, gameBoard, setGameMode } = useAppContext();
+  let board = ["", "", "", "", "", "", "", "", ""];
   const handleGameModeSelector = (mode: GameModes) => {
-    if (mode === "solo" || mode === "multiplayer") {
+    if (mode === "solo") {
+      setIsPlayerSelection(false);
+      setGameMode(mode);
+      cpuMove(board);
+    } else if (mode === "multiplayer") {
       setIsPlayerSelection(false);
       setGameMode(mode);
     } else {

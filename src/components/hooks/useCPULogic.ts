@@ -34,7 +34,7 @@ export function checkGameWinner(boardCell: string[]) {
   }
 
 
-function cpuMove(board: string[]) {
+export function cpuMove(board: string[]) {
     // Check for winning move
     for (let i = 0; i < 9; i++) {
       if (board[i] === "") {
