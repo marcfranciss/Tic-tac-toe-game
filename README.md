@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/marcfranciss/Tic-tac-toe.git)
-- Live Site URL: [GitHub Pages](https://marcfranciss.github.io/Tic-tac-toe)
+- Solution URL: [GitHub](https://github.com/marcfranciss/Tic-tac-toe-game.git)
+- Live Site URL: [GitHub Pages](https://marcfranciss.github.io/Tic-tac-toe-game)
 
 ## My process
 
