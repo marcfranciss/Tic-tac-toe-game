@@ -3,7 +3,7 @@ import imgX from "@/assets/images/icon-x.svg";
 import "./UtilsStyle.sass";
 
 interface PlayerIndicatorProps {
-  currPlayer: string;
+  currPlayer: string | null;
 }
 
 export const PlayerIndicator = ({ currPlayer }: PlayerIndicatorProps) => {

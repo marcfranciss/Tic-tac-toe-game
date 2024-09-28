@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
 type GameModes = "solo" | "multiplayer" | undefined;
-type Player = "O" | "X" | "";
+type Player = "O" | "X" | null;
 
 interface AppContextProps {
   isPlayerSelection: boolean;
@@ -34,7 +34,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
   const [gameMode, setGameMode] = useState<GameModes>(undefined);
   const [playerPicked, setPlayerPicked] = useState<Player>("O");
   const [currentPlayer, setCurrentPlayer] = useState<Player>("X");
-  const [gameWinner, setGameWinner] = useState<Player>("");
+  const [gameWinner, setGameWinner] = useState<Player>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [openRestartModal, setOpenRestartModal] = useState<boolean>(false);
   const [gameBoard, setGameBoard] = useState<number[]>([

@@ -8,3 +8,52 @@
     @include media($mobile)
         gap: 2rem
         width: 328px
+
+.cells_container
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(3, 1fr)
+    gap: 20px
+    > .cell
+        background-color: $bg-navy-hvr
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 140px
+        aspect-ratio: 1
+        border-radius: 15px
+        transition: 0.4s ease-in-out
+        cursor: pointer
+        @include shadow($bg-navy-bs)
+        &[data-player='X']:disabled
+            background-color: $bg-blue
+            > img
+                filter: $img-navy
+        &[data-player='O']:disabled
+            background-color: $bg-yellow
+            > img
+                filter: $img-navy
+        img
+            width: 64px
+            aspect-ratio: 1
+
+.cells_container[data-curr-user='X']
+    > .cell:not(:disabled):hover, .cell:focus
+        background: center no-repeat url(/src/assets/images/icon-x-outline.svg)
+        background-size: 64px 64px
+
+.cells_container[data-curr-user='O']
+    > .cell:not(:disabled):hover, .cell:focus
+        background: center no-repeat url(/src/assets/images/icon-o-outline.svg)
+        background-size: 64px 64px
+
+@include media($mobile)
+    .cells_container
+        .cell
+            width: 96px
+            > img
+                width: 40px
+    .cells_container[data-curr-user]
+        > .cell:hover, .cell:focus
+            background-size: 40px 40px

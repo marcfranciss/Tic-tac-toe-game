@@ -25,7 +25,7 @@ export const StatusModal = ({ statusMsg, onNextRound }: StatusModalProps) => {
   };
 
   const handleNextRoundButton = () => {
-    setGameWinner("");
+    setGameWinner(null);
     setOpenModal(false);
     setIsGameDraw(false);
     onNextRound(true);

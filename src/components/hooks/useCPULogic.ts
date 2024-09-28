@@ -35,6 +35,7 @@ export function checkGameWinner(boardCell: string[]) {
 
 
 export function cpuMove(board: string[]) {
+  console.log(`cpuMove function working...`)
     // Check for winning move
     for (let i = 0; i < 9; i++) {
       if (board[i] === "") {
@@ -66,6 +67,25 @@ export function cpuMove(board: string[]) {
       const randomMove =
         availableMoves[Math.floor(Math.random() * availableMoves.length)];
       board[randomMove] = "X"; // Make random move
+    }
+
+    while (true) {
+      // Player move (implement your logic to get the index)
+      // Example: board[index] = 'O';
+    
+      // CPU move
+      cpuMove(board);
+    
+      // Check game status
+      const winner = checkGameWinner(board);
+      if (winner !== null) {
+        console.log(
+          `Game Over! Result: ${
+            winner === 1 ? "CPU Wins!" : winner === -1 ? "Opponent Wins!" : "Draw"
+          }`
+        );
+        break;
+      }
     }
   }
 
